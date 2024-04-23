@@ -15,6 +15,7 @@ class NetworkRepositoryImpl extends NetworkRepository {
      final List<Anime> animeList = response.data?.map((e) => e.toAnime()).toList() ?? [];
      return animeList;
    } catch(e) {
+     print("@@@ $e");
      return [];
    }
   }

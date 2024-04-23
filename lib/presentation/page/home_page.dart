@@ -13,12 +13,14 @@ class _HomePageState extends State<HomePage> {
   late HomeViewModel _provider;
 
   @override
+  void initState() {
+    Provider.of<HomeViewModel>(context,listen: false).fetchAnimeList();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     _provider = Provider.of<HomeViewModel>(context,listen: false);
-
-    if(_provider.animeList.isEmpty) {
-      _provider.fetchAnimeList();
-    }
 
     return Scaffold(
       appBar: AppBar(

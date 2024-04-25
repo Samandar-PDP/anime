@@ -13,7 +13,7 @@ class IntroProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void _saveState(bool state) async {
+  void saveState(bool state) async {
    await _repo.saveIntro(state);
   }
 }

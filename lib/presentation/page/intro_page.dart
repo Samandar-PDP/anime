@@ -1,12 +1,22 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/data/repository/local_repository_impl.dart';
 import 'package:gap/gap.dart';
 
+import 'main_page.dart';
+
 class IntroPage extends StatelessWidget {
-  const IntroPage({super.key});
+  IntroPage({super.key});
+
+  final _repo = LocalRepositoryImpl();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent
+      ),
       body: Stack(
         children: [
           Image.asset('assets/img/img.png',fit: BoxFit.cover,
@@ -31,7 +41,7 @@ class IntroPage extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     height: 55,
-                    child: ElevatedButton(onPressed: _onStart, style:
+                    child: ElevatedButton(onPressed: () => _onStart(context), style:
                       ElevatedButton.styleFrom(
                         backgroundColor: Colors.white,
                         foregroundColor: Colors.black,
@@ -46,7 +56,10 @@ class IntroPage extends StatelessWidget {
       ),
     );
   }
-  void _onStart() {
-
+  void _onStart(BuildContext context) {
+    _repo.saveIntro(true).then((value) {
+      Navigator.of(context).pushAndRemoveUntil(CupertinoPageRoute(builder: (context)
+      => const MainPage()), (route) => false);
+    });
   }
 }

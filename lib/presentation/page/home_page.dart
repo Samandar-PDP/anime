@@ -21,7 +21,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     _provider = Provider.of<HomeViewModel>(context,listen: false);
-
     return Scaffold(
       appBar: AppBar(
         title: const Text("Anime"),
@@ -39,10 +38,7 @@ class _HomePageState extends State<HomePage> {
             return Card(
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
-                child: Image.network(
-                  _provider.animeList[index].image ?? "",
-                  fit: BoxFit.cover,
-                ),
+                child: Text(_provider.animeList[index].name ?? "j"),
               ),
             );
           },

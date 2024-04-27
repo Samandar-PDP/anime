@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/data/repository/local_repository_impl.dart';
 import 'package:flutter_application_1/presentation/page/home_page.dart';
-import 'package:flutter_application_1/presentation/page/intro_page.dart';
 import 'package:flutter_application_1/presentation/page/main_page.dart';
 import 'package:flutter_application_1/presentation/viewmodel/home_vm.dart';
 import 'package:flutter_application_1/presentation/viewmodel/intro_provider.dart';
@@ -18,7 +17,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // delete
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => HomeViewModel()),

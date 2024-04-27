@@ -28,30 +28,30 @@ class _MyBottomTabState extends State<MyBottomTab> {
         color: const Color(0xFF313131)//Theme.of(context).colorScheme.secondaryContainer.withOpacity(.3),
       ),
       padding: const EdgeInsets.all(16),
-      margin: const EdgeInsets.all(12),
+      margin: const EdgeInsets.all(20),
       width: MediaQuery.of(context).size.width,
       height: 70,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            _myBtn(() => widget.onClick(0), _icons[0], 0),
-            _myBtn(() => widget.onClick(1), _icons[1], 1),
-            _myBtn(() => widget.onClick(2), _icons[2], 2),
-            _myBtn(() => widget.onClick(3), _icons[3], 3),
-          ],
-        ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          _myBtn(() => widget.onClick(0), _icons[0], 0),
+          _myBtn(() => widget.onClick(1), _icons[1], 1),
+          _myBtn(() => widget.onClick(2), _icons[2], 2),
+          _myBtn(() => widget.onClick(3), _icons[3], 3),
+        ],
       ),
     );
   }
   _myBtn(VoidCallback onClick, IconData icon, int place) {
-    return InkWell(
-      onTap: onClick,
-      borderRadius: BorderRadius.circular(50),
-      child: GlowIcon(icon,color: widget.selectedIndex == place ? Colors.white : Colors.white60,
-        glowColor: widget.selectedIndex == place ? Colors.white : Colors.transparent,size: 18,),
+    return
+        GlowButton(
+          width: 65,
+          color: Colors.transparent,
+          borderRadius: BorderRadius.circular(100),
+          onPressed: onClick,
+          child: GlowIcon(icon,color: widget.selectedIndex == place ? Colors.white : Colors.white60,
+            glowColor: widget.selectedIndex == place ? Colors.white : Colors.transparent,size: 20),
     );
   }
 }

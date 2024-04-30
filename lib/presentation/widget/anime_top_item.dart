@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/domain/model/anime.dart';
 
 class AnimeTopItem extends StatelessWidget {
@@ -15,48 +16,43 @@ class AnimeTopItem extends StatelessWidget {
       child: InkWell(
         onTap: onClick,
         borderRadius: BorderRadius.circular(12),
-        child: Ink(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12),
-          ),
-          height: 250,
-          child: Stack(
-            children: [
-              Image.network(anime.image ?? "",fit: BoxFit.fill),
-              Center(
-                child: Icon(CupertinoIcons.play_circle,color: Colors.white),
-              ),
-              Positioned(
-                child: Padding(
-                  padding: EdgeInsets.all(12),
-                  child: Column(
-                    children: [
-                      Text(anime.name ?? ""),
-                      const SizedBox(height: 8),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Chip(label: Text("Genre")),
-                              Chip(label: Text("Genre")),
-                              Chip(label: Text("Genre")),
-                            ],
-                          ),
-                          Spacer(),
-                          Icon(CupertinoIcons.star_fill,color: CupertinoColors.activeOrange,),
-                          Text("8.2/10")
-                        ],
-                      )
+        child: Stack(
+          children: [
+            ClipRRect(borderRadius: BorderRadius.circular(12),child: Image.network(anime.image ?? "",fit: BoxFit.fill, width: double.infinity,height: double.infinity,)),
+            const Center(
+              child: Icon(CupertinoIcons.play_circle,color: Colors.white),
+            ),
+            Positioned(
+              bottom: 0,
+              left: 0,
+              right: 0,
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  gradient: const LinearGradient(
+                    colors: [
+                      Colors.transparent,
+                      Colors.black45,
+                      Colors.black,
                     ],
-                  ),
-                )
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter
+                  )
+                ),
+                padding: const EdgeInsets.all(16),
+                child: Column(
+                  children: [
+                    Text(anime.name ?? "",style: const TextStyle(
+                        fontSize: 20,
+                      color: Colors.white
+                    ),),
+                    const SizedBox(height: 8),
+                    Text(anime.nameKanji ?? "",style: const TextStyle(color: Colors.white),)
+                  ],
+                ),
               )
-            ],
-          ),
+            )
+          ],
         ),
       ),
     );

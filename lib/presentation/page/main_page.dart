@@ -20,12 +20,15 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _pages[_selectedIndex],
-      bottomNavigationBar: MyBottomTab(
-        selectedIndex: _selectedIndex,
-        onClick: (index) => setState(() { _selectedIndex = index; }),
-      ),
+      body: Stack(
+        children: [
+          Expanded(child: _pages[_selectedIndex]),
+          Positioned(bottom: 0,right: 0,left: 0,child: MyBottomTab(
+            selectedIndex: _selectedIndex,
+            onClick: (index) => setState(() { _selectedIndex = index; }),
+          ))
+        ],
+      )
     );
-
   }
 }

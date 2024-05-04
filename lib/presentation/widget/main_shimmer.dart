@@ -32,7 +32,16 @@ class MainShimmer extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12),
                 color: Colors.grey
               ),
-            ))
+            )),
+        const Gap(20),
+        SizedBox(
+          height: 250,
+          child: ListView.builder(
+            itemBuilder: (context, index) => _shimmerCard(context),
+            itemCount: 10,
+            scrollDirection: Axis.horizontal,
+          ),
+        )
       ],
     );
   }

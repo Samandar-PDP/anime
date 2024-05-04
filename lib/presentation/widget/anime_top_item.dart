@@ -22,7 +22,7 @@ class AnimeTopItem extends StatelessWidget {
           children: [
             ClipRRect(borderRadius: BorderRadius.circular(12),child: Image.network(anime.image ?? "",fit: BoxFit.fill, width: double.infinity,height: double.infinity,)),
             const Center(
-              child: Icon(CupertinoIcons.play_circle,color: Colors.red,size: 55),
+              child: Icon(CupertinoIcons.play_circle,color: Colors.white,size: 55),
             ),
             Positioned(
               bottom: 0,

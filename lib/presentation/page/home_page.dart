@@ -10,6 +10,8 @@ import 'package:flutter_application_1/presentation/widget/anime_top_item.dart';
 import 'package:gap/gap.dart';
 import 'package:provider/provider.dart';
 
+import '../widget/main_shimmer.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -35,7 +37,8 @@ class _HomePageState extends State<HomePage> {
         ),
         body: _provider.animeList.isNotEmpty
             ? _successField()
-            : const Center(child: CupertinoActivityIndicator()));
+            : const MainShimmer()
+    );
   }
 
   _successField() {

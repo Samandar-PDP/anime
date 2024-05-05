@@ -34,10 +34,10 @@ class _DetailPageState extends State<DetailPage> {
                 ), //Text
                 background: Image.network(
                   widget.anime.image ?? "",
-                  fit: BoxFit.cover,
+                  fit: BoxFit.fill,
                 ),
             ),
-              expandedHeight: 230,
+              expandedHeight: 260,
               leading: IconButton(
                 icon: const Icon(Icons.arrow_back),
                 tooltip: 'Back',

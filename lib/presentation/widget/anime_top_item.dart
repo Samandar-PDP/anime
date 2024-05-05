@@ -2,8 +2,10 @@ import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/domain/model/anime.dart';
 import 'package:gap/gap.dart';
+import 'package:marquee/marquee.dart';
 
 class AnimeTopItem extends StatelessWidget {
   const AnimeTopItem({super.key, required this.anime, required this.onClick});
@@ -53,7 +55,7 @@ class AnimeTopItem extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(anime.nameKanji ?? "",style: const TextStyle(color: Colors.white)),
+                        Expanded(child: Text(anime.nameKanji ?? "",style: const TextStyle(color: Colors.white),overflow: TextOverflow.ellipsis)),
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.center,

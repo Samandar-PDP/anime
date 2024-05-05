@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> {
                 closedColor: Colors.transparent,
                 openColor: Colors.transparent,
                 closedElevation: 0,
-                openBuilder: (context, callback) => const DetailPage(),
+                openBuilder: (context, callback) => DetailPage(anime: _provider.animeList[index],),
                 closedBuilder: (context, callback) => AnimeTopItem(
                     anime: _provider.animeList[index], onClick: callback)),
             options: CarouselOptions(
@@ -83,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                 closedBuilder: (context, callback) => AnimeItem(
                     anime: _provider.animeList2[index],
                     onClick: callback),
-                openBuilder: (ctx, cls) => DetailPage()),
+                openBuilder: (ctx, cls) => DetailPage(anime: _provider.animeList2[index],)),
           )
               : Container(),
         ),
@@ -107,7 +107,7 @@ class _HomePageState extends State<HomePage> {
                       closedBuilder: (context, callback) => AnimeItem(
                           anime: _provider.animeList3[index],
                           onClick: callback),
-                      openBuilder: (ctx, cls) => const DetailPage()),
+                      openBuilder: (ctx, cls) => DetailPage(anime: _provider.animeList3[index],)),
                 )
               : Container(),
         ),

@@ -1,6 +1,5 @@
 import 'package:flutter_application_1/data/model/anime_response.dart';
 import 'package:flutter_application_1/domain/model/anime.dart';
-import 'package:flutter_application_1/domain/model/anime_db.dart';
 
 extension Map on Data {
   Anime toAnime() {

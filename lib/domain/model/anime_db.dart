@@ -2,7 +2,7 @@ import 'dart:typed_data';
 
 import 'package:floor/floor.dart';
 
-@entity // table
+@Entity(tableName: "anime_db") // table
 class AnimeDb {
   @PrimaryKey(autoGenerate: true) // o'zgarmaydigan id'si
   int? id;

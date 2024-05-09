@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/data/repository/local_repository_impl.dart';
 import 'package:flutter_application_1/presentation/page/home_page.dart';
 import 'package:flutter_application_1/presentation/page/main_page.dart';
+import 'package:flutter_application_1/presentation/viewmodel/detail_provider.dart';
 import 'package:flutter_application_1/presentation/viewmodel/home_vm.dart';
 import 'package:flutter_application_1/presentation/viewmodel/intro_provider.dart';
 import 'package:provider/provider.dart';
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (context) => HomeViewModel()),
         ChangeNotifierProvider(create: (context) => IntroProvider()),
+        ChangeNotifierProvider(create: (context) => DetailProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

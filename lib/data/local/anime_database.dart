@@ -7,7 +7,7 @@ import 'package:flutter_application_1/domain/model/anime_db.dart';
 
 part 'anime_database.g.dart';
 
-@Database(version: 2, entities: [AnimeDb])
+@Database(version: 1, entities: [AnimeDb])
 abstract class AnimeDatabase extends FloorDatabase {
    AnimeDao get animeDao;
 }

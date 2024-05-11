@@ -1,5 +1,4 @@
 import 'dart:typed_data';
-
 import 'package:floor/floor.dart';
 
 @Entity(tableName: "anime_db") // table
@@ -44,3 +43,4 @@ class AnimeDb {
     return 'AnimeDb{id: $id, animeId: $animeId, name: $name, nameKanji: $nameKanji, nickName: $nickName, about: $about, imageData: $imageData}';
   }
 }
+

@@ -12,9 +12,6 @@ class DetailProvider extends ChangeNotifier {
   bool isSaved = false;
   Uint8List? _uInt8list;
 
-  init() async {
-    await _localRepository.init();
-  }
   void checkSavedOrNot(int id) async {
     final anime = await _localRepository.findAnimeById(id);
     isSaved = anime != null;

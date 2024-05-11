@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/presentation/page/bookmark_page.dart';
 import 'package:flutter_application_1/presentation/page/home_page.dart';
 import 'package:flutter_application_1/presentation/widget/bottom_tab.dart';
 
@@ -13,7 +14,7 @@ class _MainPageState extends State<MainPage> {
   int _selectedIndex = 0;
   final _pages = [
     const HomePage(),
-    Container(),
+    const BookmarkPage(),
     Container(),
     Container(),
   ];

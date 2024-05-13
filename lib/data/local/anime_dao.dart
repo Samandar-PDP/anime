@@ -9,7 +9,7 @@ abstract class AnimeDao {
   @Insert(onConflict: OnConflictStrategy.ignore)
   Future<void> saveAnime(AnimeDb db);
 
-  @Query("SELECT * FROM anime_db")
+  @Query("SELECT * FROM anime_db ORDER BY id DESC")
   Stream<List<AnimeDb>> getAllAnimeList();
 
   @delete

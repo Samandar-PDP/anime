@@ -3,7 +3,6 @@ import 'dart:typed_data';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/presentation/viewmodel/bm_provider.dart';
-import 'package:flutter_application_1/presentation/widget/local_item.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:gap/gap.dart';
 import 'package:provider/provider.dart';
@@ -47,9 +46,6 @@ class _BookmarkPageState extends State<BookmarkPage> {
         separatorBuilder: (context, index) => const Divider(),
         itemCount: animeList.length,
         itemBuilder: (context, index) {
-          // if(index == animeList.length - 1) {
-          //   return SizedBox(height: 200);
-          // }
           return SizedBox(
             height: 170,
             child: Slidable(

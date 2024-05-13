@@ -18,7 +18,7 @@ class DetailProvider extends ChangeNotifier {
     notifyListeners();
   }
   void saveOrDelete(Anime anime) async {
-    _uInt8list ??= await linkToByteArray(anime.image ?? "");
+    _uInt8list = await linkToByteArray(anime.image ?? ""); // image error has been fixed
     final s = anime.nicknames?.isEmpty == true ? "" : anime.nicknames?[0];
     final localAnime = AnimeDb(
       id: null,

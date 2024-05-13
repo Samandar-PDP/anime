@@ -7,4 +7,8 @@ class BmProvider extends ChangeNotifier {
  // final List<AnimeDb> animeList = [];
 
   Stream<List<AnimeDb>>? fetchLocalAnimeList() => _local.getFavoriteAnimeList();
+
+  void delete(AnimeDb anime) async {
+    await _local.deleteFavoriteAnime(anime);
+  }
 }
